@@ -26,4 +26,9 @@ class Article extends Model
             'expiration_date'   => 'date|nullable',
         ];
     }
+
+    public function tag()
+    {
+        return $this->belongsToMany(Tag::class, 'article_tags');
+    }
 }

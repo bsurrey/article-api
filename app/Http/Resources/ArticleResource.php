@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 class ArticleResource extends JsonResource
 {
     /**
-     * return a array of the article object
+     * return an array of the article object
      *
      * @param Request $request
      * @return array
@@ -24,7 +24,6 @@ class ArticleResource extends JsonResource
             'sentim_score'      => $this->getSentimScore(),
             'publication_date'  => $this->publication_date,
             'created_at'        => $this->created_at,
-            'updated_at'        => $this->updated_at,
         ];
     }
 

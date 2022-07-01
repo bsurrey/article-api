@@ -11,7 +11,7 @@ class ArticlesController extends Controller
     // get all articles & hide the text field
     public function index()
     {
-        return ArticleResource::collection(Article::all()->makeHidden('text'));
+        return ArticleResource::collection(Article::all()->makeHidden('text')->where('expiration_date','>=', now() ));
     }
 
     // create a new article
