@@ -8,9 +8,11 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('article_tags', function (Blueprint $table) {
-            $table->id();
+            // article id
             $table->foreignId('article_id');
-            $table->string('tag_name');
+
+            //tag id
+            $table->foreignId('tag_id');
         });
     }
 

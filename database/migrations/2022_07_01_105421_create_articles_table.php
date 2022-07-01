@@ -31,8 +31,7 @@ return new class extends Migration {
                 ->nullable();
 
             // creation date
-            $table->timestamp('created_at')
-                ->nullable();
+            $table->timestamps();
         });
     }
 

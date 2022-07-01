@@ -8,8 +8,10 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
+            // tag id
             $table->id();
 
+            // tag name
             $table->string('name')
                 ->index();
         });

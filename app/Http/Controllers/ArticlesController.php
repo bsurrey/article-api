@@ -22,7 +22,7 @@ class ArticlesController extends Controller
         $article = Article::create([
             'name'              => $request->name,
             'text'              => $request->text,
-            'author'            => $request->auhor,
+            'author'            => $request->author,
             'publication_date'  => $request->publication_date,
             'created_at'        => $request->created_at,
             'expiration_date'   => $request->expiration_date,
