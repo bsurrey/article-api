@@ -10,7 +10,7 @@ class ArticleSeeder extends Seeder
 {
     public function run()
     {
-        for ($count = 0; $count <= 100; $count++) {
+        for ($count = 0; $count <= 10; $count++) {
             DB::table('articles')->insert([
                 'name' => fake()->name(),
                 'author' => fake()->userName(),
@@ -18,7 +18,6 @@ class ArticleSeeder extends Seeder
                 'publication_date' => now(),
                 'expiration_date' => fake()->date(),
                 'created_at' => now(),
-                'updated_at' => now(),
             ]);
         }
     }

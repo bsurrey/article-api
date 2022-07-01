@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->text('text');
 
             // article publication date
-            $table->timestamp('publication_date', 0)
+            $table->timestamp('publication_date')
                 ->nullable();
 
             // article expiration date

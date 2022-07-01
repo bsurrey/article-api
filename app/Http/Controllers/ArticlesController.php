@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    // get all articles
+    // get all articles & hide the text field
     public function index()
     {
-        return Article::all()
-            ->makeHidden('text');
+        return ArticleResource::collection(Article::all()->makeHidden('text'));
     }
 
     // create a new article
@@ -22,11 +21,11 @@ class ArticlesController extends Controller
 
         $article = Article::create([
             'name'              => $request->name,
-            'author'            => $request->auhor,
             'text'              => $request->text,
+            'author'            => $request->auhor,
             'publication_date'  => $request->publication_date,
             'created_at'        => $request->created_at,
-            'updated_at'        => $request->updated_at,
+            'expiration_date'   => $request->expiration_date,
         ]);
 
         return new ArticleResource($article);
@@ -48,7 +47,7 @@ class ArticlesController extends Controller
             'author',
             'text',
             'publication_date',
-            'updated_at',
+            'expiration_date',
         ]));
 
         return new ArticleResource($article);
